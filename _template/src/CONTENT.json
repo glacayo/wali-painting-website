@@ -1,0 +1,85 @@
+{
+    "_instructions": {
+        "phrases": "Each phrase must be min 6 words, max 8 words",
+        "content_paragraphs": "Each paragraph must be min 50 words, max 60 words",
+        "service_description": "Each service description must be min 30 words, max 40 words",
+        "mission_vision_why": "These fields must be exactly 50 words each"
+    },
+    "company_colors": {
+        "primary": "[HEX_PRIMARY]",
+        "accent": "[HEX_ACCENT]",
+        "light": "[HEX_LIGHT]",
+        "dark": "[HEX_DARK]"
+    },
+    "company_name": "[COMPANY NAME]",
+    "company_phone": [
+        "[PHONE_1]"
+    ],
+    "company_email": [
+        "[EMAIL]"
+    ],
+    "company_address": "[STREET ADDRESS, CITY, STATE ZIP]",
+    "company_schedule": [
+        "[SCHEDULE]"
+    ],
+    "company_license": "[LICENSE NUMBER or NO LICENSE]",
+    "company_license_insurance": "[INSURANCE INFO or NO INSURANCE]",
+    "company_payment_method": "[PAYMENT METHODS]",
+    "company_estimate": "[Free Estimates Available]",
+    "company_years_experience": "[X Years of Experience]",
+    "company_cover_area": "[LIST OF CITIES/AREAS SERVED]",
+    "company_type_services": "[Residential and/or Commercial]",
+    "social_media": {
+        "facebook": "[FACEBOOK URL or NO FACEBOOK]",
+        "google": "[GOOGLE URL or NO GOOGLE]",
+        "instagram": "[INSTAGRAM URL or NO INSTAGRAM]",
+        "youtube": "[YOUTUBE URL or NO YOUTUBE]",
+        "tiktok": "[TIKTOK URL or NO TIKTOK]"
+    },
+    "phrases": [
+        "[PLACEHOLDER — AI writes: min 6 words, max 8 words]",
+        "[PLACEHOLDER]",
+        "[PLACEHOLDER]",
+        "[PLACEHOLDER]",
+        "[PLACEHOLDER]"
+    ],
+    "home_content": [
+        "[PLACEHOLDER — AI writes: min 50 words, max 60 words]",
+        "[PLACEHOLDER]",
+        "[PLACEHOLDER]"
+    ],
+    "company_mission": "[PLACEHOLDER — AI writes: exactly 50 words]",
+    "company_vision": "[PLACEHOLDER — exactly 50 words]",
+    "company_why_choose_us": "[PLACEHOLDER — exactly 50 words]",
+    "about_content": [
+        "[PLACEHOLDER — AI writes: min 50 words, max 60 words]",
+        "[PLACEHOLDER]",
+        "[PLACEHOLDER]"
+    ],
+    "services": [
+        {
+            "name": "[SERVICE_1_NAME]",
+            "description": "[PLACEHOLDER — AI writes: min 30 words, max 40 words]"
+        },
+        {
+            "name": "[SERVICE_2_NAME]",
+            "description": "[PLACEHOLDER]"
+        },
+        {
+            "name": "[SERVICE_3_NAME]",
+            "description": "[PLACEHOLDER]"
+        },
+        {
+            "name": "[SERVICE_4_NAME]",
+            "description": "[PLACEHOLDER]"
+        },
+        {
+            "name": "[SERVICE_5_NAME]",
+            "description": "[PLACEHOLDER]"
+        },
+        {
+            "name": "[SERVICE_6_NAME]",
+            "description": "[PLACEHOLDER]"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Copy these values from src/CONTENT.json company_colors ─── */
+  --color-brand-primary: #000000;
+  --color-brand-accent:  #000000;
+  --color-brand-light:   #f8f9fa;
+  --color-brand-dark:    #111827;
+
+  --font-family-heading: 'Montserrat', system-ui, sans-serif;
+  --font-family-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-family-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+  }
+}

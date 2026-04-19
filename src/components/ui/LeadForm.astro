@@ -1,10 +1,10 @@
 ---
-import content from '../../CONTENT.json';
+import content from '../../content.ts';
 
 const services = content.services.map(s => s.name);
 ---
 
-<form name="lead-form" method="POST" data-netlify="true" class="space-y-4">
+<form name="lead-form" method="POST" data-netlify="true" action="/thank-you" class="space-y-4">
   <input type="hidden" name="form-name" value="lead-form" />
   
   <div>

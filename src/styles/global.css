@@ -1,18 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #a80000;
+  --color-brand-accent: #1a458b;
+  --color-brand-light: #e3e1d4;
+  --color-brand-dark: #09234e;
+
+  --font-family-heading: 'Montserrat', system-ui, sans-serif;
+  --font-family-body: 'Inter', system-ui, sans-serif;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-family-body);
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', system-ui, sans-serif;
+    font-family: var(--font-family-heading);
   }
 }

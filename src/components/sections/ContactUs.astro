@@ -1,5 +1,5 @@
 ---
-import content from '../../CONTENT.json';
+import content from '../../content.ts';
 ---
 
 <section id="contact" class="py-20 bg-brand-light">
@@ -18,7 +18,7 @@ import content from '../../CONTENT.json';
       <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
         <h3 class="font-heading font-bold text-2xl text-brand-dark mb-6">Send Us a Message</h3>
         
-        <form name="contact-form" method="POST" data-netlify="true" class="space-y-5">
+        <form name="contact-form" method="POST" data-netlify="true" action="/thank-you" class="space-y-5">
           <input type="hidden" name="form-name" value="contact-form" />
           
           <div>

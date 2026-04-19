@@ -1,0 +1,70 @@
+---
+import content from '../../CONTENT.json';
+---
+
+<section class="py-20 bg-brand-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Mission -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+        <div class="w-14 h-14 bg-brand-primary rounded-lg flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-xl mb-4">Our Mission</h3>
+        <p class="text-gray-300 leading-relaxed text-sm">{content.company_mission}</p>
+      </div>
+
+      <!-- Vision -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+        <div class="w-14 h-14 bg-brand-accent rounded-lg flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-xl mb-4">Our Vision</h3>
+        <p class="text-gray-300 leading-relaxed text-sm">{content.company_vision}</p>
+      </div>
+
+      <!-- Why Choose Us -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+        <div class="w-14 h-14 bg-brand-primary rounded-lg flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-xl mb-4">Why Choose Us</h3>
+        <p class="text-gray-300 leading-relaxed text-sm mb-4">{content.company_why_choose_us}</p>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-primary" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+            14+ Years Experience
+          </li>
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-primary" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+            Free Estimates
+          </li>
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-primary" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+            Quality Materials
+          </li>
+          <li class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-primary" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+            Customer Satisfaction
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

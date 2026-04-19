@@ -1,0 +1,90 @@
+---
+import content from '../../CONTENT.json';
+import { Image } from 'astro:assets';
+import welcomeImg from '../../assets/images/welcome/welcome.jpg';
+---
+
+<section id="welcome" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Image -->
+      <div class="relative">
+        <Image 
+          src={welcomeImg} 
+          alt="Wali Painting Team at Work" 
+          class="rounded-xl shadow-2xl w-full object-cover aspect-[4/3]"
+        />
+        <!-- Badge -->
+        <div class="absolute -bottom-6 -right-6 bg-brand-primary text-white px-6 py-4 rounded-xl shadow-lg">
+          <span class="text-3xl font-bold">14+</span>
+          <p class="text-sm">Years of Experience</p>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-brand-dark mb-4">
+          Welcome to {content.company_name}
+        </h2>
+        
+        <div class="w-20 h-1 bg-brand-primary mb-6"></div>
+        
+        {content.home_content.map((paragraph, index) => (
+          <p class="text-gray-600 leading-relaxed mb-4" set:html={paragraph} />
+        ))}
+
+        <!-- Key Points -->
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <div>
+              <h4 class="font-semibold text-brand-dark">Free Estimates</h4>
+              <p class="text-sm text-gray-500">No obligation quotes</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <div>
+              <h4 class="font-semibold text-brand-dark">Licensed & Insured</h4>
+              <p class="text-sm text-gray-500">Full coverage</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <div>
+              <h4 class="font-semibold text-brand-dark">Quality Materials</h4>
+              <p class="text-sm text-gray-500">Premium paints only</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <div>
+              <h4 class="font-semibold text-brand-dark">Satisfaction Guaranteed</h4>
+              <p class="text-sm text-gray-500">100% commitment</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="inline-flex items-center gap-2 mt-8 text-brand-primary hover:text-brand-dark font-semibold transition-colors">
+          Learn More About Us
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

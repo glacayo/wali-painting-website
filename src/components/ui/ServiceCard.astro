@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: ImageMetadata;
+  imageAlt: string;
+}
+
+const { title, description, imageSrc, imageAlt } = Astro.props;
+---
+
+<div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+  <div class="aspect-[4/3] overflow-hidden">
+    <Image 
+      src={imageSrc} 
+      alt={imageAlt}
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+  </div>
+  <div class="p-6">
+    <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">{title}</h3>
+    <p class="text-gray-600 text-sm leading-relaxed">{description}</p>
+  </div>
+</div>

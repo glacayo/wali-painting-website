@@ -1,0 +1,72 @@
+---
+import content from '../../CONTENT.json';
+import ServiceCard from '../ui/ServiceCard.astro';
+import { Image } from 'astro:assets';
+
+// Import all service images
+import residentialImg from '../../assets/images/services/residential-painting.jpg';
+import commercialImg from '../../assets/images/services/commercial-painting.jpg';
+import interiorImg from '../../assets/images/services/interior-painting.jpg';
+import exteriorImg from '../../assets/images/services/exterior-painting.jpg';
+import kitchenImg from '../../assets/images/services/kitchen-cabinets-painting.jpg';
+import deckPaintImg from '../../assets/images/services/deck-painting.jpg';
+import deckRestImg from '../../assets/images/services/deck-restoration.jpg';
+import deckStainImg from '../../assets/images/services/deck-staining.jpg';
+import flooringImg from '../../assets/images/services/flooring-services.jpg';
+import handymanImg from '../../assets/images/services/handyman-services.jpg';
+
+const serviceImages = {
+  'Residential Painting': { src: residentialImg, alt: 'Residential painting project' },
+  'Commercial Painting': { src: commercialImg, alt: 'Commercial painting project' },
+  'Interior Painting': { src: interiorImg, alt: 'Interior painting project' },
+  'Exterior Painting': { src: exteriorImg, alt: 'Exterior painting project' },
+  'Kitchen Cabinets Painting': { src: kitchenImg, alt: 'Kitchen cabinets painting project' },
+  'Deck Painting': { src: deckPaintImg, alt: 'Deck painting project' },
+  'Deck Restoration': { src: deckRestImg, alt: 'Deck restoration project' },
+  'Deck Staining': { src: deckStainImg, alt: 'Deck staining project' },
+  'Flooring Services': { src: flooringImg, alt: 'Flooring services project' },
+  'Handyman Services': { src: handymanImg, alt: 'Handyman services project' },
+};
+
+const services = content.services.map(service => ({
+  ...service,
+  image: serviceImages[service.name] || { src: residentialImg, alt: service.name }
+}));
+---
+
+<section id="services" class="py-20 bg-brand-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-brand-dark mb-4">Our Services</h2>
+      <div class="w-20 h-1 bg-brand-primary mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Comprehensive painting and handyman services for your home or business. Quality craftsmanship guaranteed.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map(service => (
+        <ServiceCard 
+          title={service.name}
+          description={service.description}
+          imageSrc={service.image.src}
+          imageAlt={service.image.alt}
+        />
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <p class="text-gray-600 mb-6">Need a service not listed? Contact us for custom requests.</p>
+      <a href="#contact" class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold px-8 py-4 rounded-lg transition-colors">
+        Get a Free Estimate
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{
+  "name": "wali-painting-website",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^4.16.0",
+    "glob": "^11.0.0",
+    "sharp": "^0.33.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

@@ -1,0 +1,99 @@
+---
+import content from '../../CONTENT.json';
+import { Image } from 'astro:assets';
+import logoImg from '../../assets/images/logo/logo.png';
+
+const { company_name } = content;
+
+const navLinks = [
+  { href: '#hero', label: 'Home' },
+  { href: '#welcome', label: 'Welcome' },
+  { href: '#services', label: 'Services' },
+  { href: '#gallery', label: 'Gallery' },
+  { href: '#about', label: 'About Us' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<nav id="navbar" class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo & Company Name -->
+      <a href="#hero" class="flex items-center gap-3">
+        <Image
+          src={logoImg}
+          alt="{company_name} logo"
+          class="h-12 w-auto object-contain"
+          width={48}
+          height={48}
+        />
+        <span class="font-heading font-bold text-xl text-brand-dark">{company_name}</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="font-medium text-gray-700 hover:text-brand-primary transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-3">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="font-medium text-gray-700 hover:text-brand-primary transition-colors py-2"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+    });
+  });
+
+  // Add shadow on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add('shadow-lg');
+    } else {
+      navbar?.classList.remove('shadow-lg');
+    }
+  });
+</script>

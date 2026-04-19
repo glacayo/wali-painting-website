@@ -1,0 +1,220 @@
+---
+import { Image } from 'astro:assets';
+
+// Import all gallery images
+import gallery01 from '../../assets/images/gallery/gallery-01.jpg';
+import gallery02 from '../../assets/images/gallery/gallery-02.jpg';
+import gallery03 from '../../assets/images/gallery/gallery-03.jpg';
+import gallery04 from '../../assets/images/gallery/gallery-04.jpg';
+import gallery05 from '../../assets/images/gallery/gallery-05.jpg';
+import gallery06 from '../../assets/images/gallery/gallery-06.jpg';
+import gallery07 from '../../assets/images/gallery/gallery-07.jpg';
+import gallery08 from '../../assets/images/gallery/gallery-08.jpg';
+import gallery09 from '../../assets/images/gallery/gallery-09.jpg';
+import gallery10 from '../../assets/images/gallery/gallery-10.jpg';
+import gallery11 from '../../assets/images/gallery/gallery-11.jpg';
+import gallery12 from '../../assets/images/gallery/gallery-12.jpg';
+import gallery13 from '../../assets/images/gallery/gallery-13.jpg';
+import gallery14 from '../../assets/images/gallery/gallery-14.jpg';
+import gallery15 from '../../assets/images/gallery/gallery-15.jpg';
+import gallery16 from '../../assets/images/gallery/gallery-16.jpg';
+import gallery17 from '../../assets/images/gallery/gallery-17.jpg';
+import gallery18 from '../../assets/images/gallery/gallery-18.jpg';
+import gallery19 from '../../assets/images/gallery/gallery-19.jpg';
+import gallery20 from '../../assets/images/gallery/gallery-20.jpg';
+import gallery21 from '../../assets/images/gallery/gallery-21.jpg';
+import gallery22 from '../../assets/images/gallery/gallery-22.jpg';
+import gallery23 from '../../assets/images/gallery/gallery-23.jpg';
+import gallery24 from '../../assets/images/gallery/gallery-24.jpg';
+import gallery25 from '../../assets/images/gallery/gallery-25.jpg';
+import gallery26 from '../../assets/images/gallery/gallery-26.jpg';
+import gallery27 from '../../assets/images/gallery/gallery-27.jpg';
+import gallery28 from '../../assets/images/gallery/gallery-28.jpg';
+import gallery29 from '../../assets/images/gallery/gallery-29.jpg';
+
+const allImages = [
+  gallery01, gallery02, gallery03, gallery04, gallery05,
+  gallery06, gallery07, gallery08, gallery09, gallery10,
+  gallery11, gallery12, gallery13, gallery14, gallery15,
+  gallery16, gallery17, gallery18, gallery19, gallery20,
+  gallery21, gallery22, gallery23, gallery24, gallery25,
+  gallery26, gallery27, gallery28, gallery29
+];
+
+const INITIAL_LOAD = 9;
+const imagesToShow = allImages.slice(0, INITIAL_LOAD);
+const hasMore = allImages.length > INITIAL_LOAD;
+---
+
+<section id="gallery" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-brand-dark mb-4">Our Work</h2>
+      <div class="w-20 h-1 bg-brand-primary mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Browse through our portfolio of completed projects across Delaware.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {imagesToShow.map((img, index) => (
+        <button
+          class="aspect-square overflow-hidden rounded-lg cursor-pointer hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-brand-primary"
+          data-lightbox-src={img.src}
+          data-lightbox-index={index}
+          aria-label={`View gallery image ${index + 1}`}
+        >
+          <Image
+            src={img}
+            alt={`Gallery image ${index + 1}`}
+            class="w-full h-full object-cover"
+            widths={[320, 640, 960]}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </button>
+      ))}
+    </div>
+
+    <!-- Load More Button -->
+    {hasMore && (
+      <div class="text-center mt-12">
+        <button
+          id="load-more-btn"
+          class="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+          data-total={allImages.length}
+          data-loaded={INITIAL_LOAD}
+        >
+          Load More Photos ({allImages.length - INITIAL_LOAD} remaining)
+        </button>
+      </div>
+    )}
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+  <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-brand-primary transition-colors" aria-label="Close lightbox">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <button id="lightbox-prev" class="absolute left-4 text-white hover:text-brand-primary transition-colors" aria-label="Previous image">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+  <img id="lightbox-img" src="" alt="Gallery image" class="max-w-full max-h-[85vh] object-contain" />
+  <button id="lightbox-next" class="absolute right-4 text-white hover:text-brand-primary transition-colors" aria-label="Next image">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+  <div id="lightbox-counter" class="absolute bottom-4 text-white text-sm"></div>
+</div>
+
+<script>
+  // Gallery data for lightbox
+  const galleryImages = [
+    '/images/gallery/gallery-01.jpg',
+    '/images/gallery/gallery-02.jpg',
+    '/images/gallery/gallery-03.jpg',
+    '/images/gallery/gallery-04.jpg',
+    '/images/gallery/gallery-05.jpg',
+    '/images/gallery/gallery-06.jpg',
+    '/images/gallery/gallery-07.jpg',
+    '/images/gallery/gallery-08.jpg',
+    '/images/gallery/gallery-09.jpg',
+    '/images/gallery/gallery-10.jpg',
+    '/images/gallery/gallery-11.jpg',
+    '/images/gallery/gallery-12.jpg',
+    '/images/gallery/gallery-13.jpg',
+    '/images/gallery/gallery-14.jpg',
+    '/images/gallery/gallery-15.jpg',
+    '/images/gallery/gallery-16.jpg',
+    '/images/gallery/gallery-17.jpg',
+    '/images/gallery/gallery-18.jpg',
+    '/images/gallery/gallery-19.jpg',
+    '/images/gallery/gallery-20.jpg',
+    '/images/gallery/gallery-21.jpg',
+    '/images/gallery/gallery-22.jpg',
+    '/images/gallery/gallery-23.jpg',
+    '/images/gallery/gallery-24.jpg',
+    '/images/gallery/gallery-25.jpg',
+    '/images/gallery/gallery-26.jpg',
+    '/images/gallery/gallery-27.jpg',
+    '/images/gallery/gallery-28.jpg',
+    '/images/gallery/gallery-29.jpg',
+  ];
+
+  const grid = document.getElementById('gallery-grid');
+  const btn = document.getElementById('load-more-btn');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+
+  let currentIndex = 0;
+
+  // Lightbox functions
+  function openLightbox(index: number) {
+    currentIndex = index;
+    updateLightboxImage();
+    lightbox?.classList.remove('hidden');
+    lightbox?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.add('hidden');
+    lightbox?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxImage() {
+    if (lightboxImg) {
+      lightboxImg.src = galleryImages[currentIndex];
+      lightboxImg.alt = `Gallery image ${currentIndex + 1}`;
+    }
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+    }
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateLightboxImage();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateLightboxImage();
+  }
+
+  // Attach click handlers to gallery buttons
+  grid?.querySelectorAll('button[data-lightbox-index]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = parseInt(btn.getAttribute('data-lightbox-index') || '0');
+      openLightbox(index);
+    });
+  });
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightboxNext?.addEventListener('click', nextImage);
+  lightboxPrev?.addEventListener('click', prevImage);
+
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox?.classList.contains('flex')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
+</script>

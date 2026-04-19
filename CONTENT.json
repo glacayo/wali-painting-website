@@ -1,0 +1,102 @@
+{
+    "_instructions": {
+        "phrases": "Cada phrase tiene que tener al menos 6 palabras y maximo 8",
+        "content_paragraphs": "Cada paragraph tiene que tener al menos 50 palabras y maximo 60",
+        "service_description": "Cada service description tiene que tener al menos 30 palabras y maximo 40",
+        "mission_vision_why": "Estas variables deben contener exactamente una linea de texto de 50 palabras"
+    },
+    "company_colors": {
+        "primary": "#a80000",
+        "accent": "#1a458b",
+        "light": "#e3e1d4",
+        "dark": "#09234e"
+    },
+    "company_name": "Wali Painting & Handyman",
+    "company_phone": [
+        "(302) 296-6032",
+        "(302) 988-9335"
+    ],
+    "company_email": [
+        "walipainting@gmail.com"
+    ],
+    "company_address": "8 Little street Georgetown, DE 19947",
+    "company_schedule": [
+        "Mon to Sun 6AM to 7PM"
+    ],
+    "company_license": "NO LICENSE",
+    "company_license_insurance": "NO INSURANCE",
+    "company_payment_method": "Cash, Check, Zelle",
+    "company_estimate": "Free Estimates Available",
+    "company_years_experience": "14 Years of Experience",
+    "company_cover_area": "Dover Middletown, Mildfor, Luis, Milford, Delmark, Laurel, Shelvyville, Ocean View",
+    "company_type_services": "Residential and Commercial",
+    "social_media": {
+        "facebook": "https://www.facebook.com/WaliPaintingDelaware",
+        "google": "NO GOOGLE",
+        "instagram": "NO INSTAGRAM",
+        "youtube": "NO YOUTUBE",
+        "tiktok": "NO TIKTOK"
+    },
+    "phrases": [
+        "Expert painters delivering flawless finishes every time",
+        "Transform your home with our professional painting team",
+        "Trusted local painters serving Delaware communities",
+        "Quality craftsmanship backed by fourteen years experience",
+        "From decks to interiors we handle it all"
+    ],
+    "home_content": [
+        "Wali Painting & Handyman is a family owned business proudly serving Delaware communities for fourteen years. We specialize in residential and commercial painting projects, delivering exceptional craftsmanship at competitive prices. Our commitment to quality and customer satisfaction has made us the preferred choice for homeowners and businesses across the region.",
+        "From interior transformations to exterior makeovers, our skilled team handles projects of every size with precision and care. We use premium materials and proven techniques to ensure long lasting results that exceed your expectations. Every job receives our full attention regardless of scope, treating your property as if it were our own home.",
+        "Located in Georgetown, Delaware, we proudly serve Dover, Middletown, Milford, Laurel, and surrounding areas. Our flexible scheduling, free estimates, and dedication to open communication set us apart. Let Wali Painting & Handyman bring your vision to life with professionalism and reliability you can count on."
+    ],
+    "company_mission": "Our mission is to deliver exceptional painting and handyman services that transform properties and exceed client expectations. We are committed to quality craftsmanship, honest pricing, and building lasting relationships with every customer we serve in Delaware.",
+    "company_vision": "We envision becoming the most trusted painting and handyman company in Delaware by consistently delivering superior results, fostering community connections, and setting the standard for professionalism and reliability in our industry for years to come.",
+    "company_why_choose_us": "With fourteen years of hands on experience, our team brings expertise and dedication to every project. We offer free estimates, flexible scheduling, and competitive pricing while using premium materials that ensure beautiful long lasting finishes for your home or business.",
+    "about_content": [
+        "Wali Painting & Handyman was founded with a simple mission: provide reliable, high quality painting services that Delaware families can trust. Over fourteen years, what started as a small operation has grown into a comprehensive painting and handyman business serving both residential and commercial clients across the region. Our journey has been built one satisfied customer at a time.",
+        "We take enormous pride in our work and treat every project with the care and attention it deserves. Our team is fully equipped to handle jobs of any scale, from a single room refresh to complete exterior transformations. We believe in doing the job right the first time, which is why we use only premium paints and proven application techniques.",
+        "Our reputation has been earned through consistent excellent results and genuine customer care. We listen to your needs, provide honest recommendations, and work within your budget to achieve your vision. When you choose Wali Painting & Handyman, you choose a team that treats your property with respect and delivers craftsmanship you can be proud of for years."
+    ],
+    "services": [
+        {
+            "name": "Residential Painting",
+            "description": "Complete residential painting services for interiors and exteriors. We prepare surfaces properly, use premium paints, and deliver clean professional results that transform your living spaces and enhance your home's curb appeal throughout Delaware."
+        },
+        {
+            "name": "Commercial Painting",
+            "description": "Professional commercial painting for offices, retail spaces, warehouses, and industrial facilities. We work around your business schedule, minimize disruption to operations, and provide durable finishes that project a polished image for your company."
+        },
+        {
+            "name": "Interior Painting",
+            "description": "Transform your home's interior with our expert painting services. From walls and ceilings to trim and accent walls, we handle every detail with precision. We properly prepare surfaces, use low odor paints, and leave your space spotless."
+        },
+        {
+            "name": "Exterior Painting",
+            "description": "Protect and beautify your home's exterior with our professional painting services. We properly prepare siding, trim, and doors, applying weather resistant paints that withstand Delaware's climate while dramatically improving your home's appearance."
+        },
+        {
+            "name": "Kitchen Cabinets Painting",
+            "description": "Give your kitchen a stunning makeover without the cost of replacement. Our cabinet painting service includes thorough cleaning, sanding, priming, and applying durable finishes that look factory quality. Choose from a wide range of colors to match your style."
+        },
+        {
+            "name": "Deck Painting",
+            "description": "Extend the life and beauty of your deck with our professional painting services. We properly prepare wood surfaces, apply premium deck paints that resist wear and weather, and create an attractive outdoor space for your family to enjoy."
+        },
+        {
+            "name": "Deck Restoration",
+            "description": "Bring old weathered decks back to life with our comprehensive restoration service. We replace damaged boards, repair loose fasteners, sand thoroughly, and apply professional grade stains and sealers that protect your investment for years."
+        },
+        {
+            "name": "Deck Staining",
+            "description": "Enhance and protect your deck with expert staining services. We offer transparent semi-transparent and solid color stains in many colors. Our preparation ensures even application and maximum penetration for long lasting beauty and weather protection."
+        },
+        {
+            "name": "Flooring Services",
+            "description": "Complete flooring installation and refinishing services including hardwood, laminate, and luxury vinyl plank flooring. We handle subfloor preparation, precise installation, and finishing work to give you beautiful durable floors that transform your space."
+        },
+        {
+            "name": "Handyman Services",
+            "description": "From minor repairs to general maintenance tasks, our handyman services cover a wide range of home improvement needs. Drywall repairs, fixture installation, baseboard trimming, and countless other tasks handled efficiently and affordably for Delaware homeowners."
+        }
+    ]
+}

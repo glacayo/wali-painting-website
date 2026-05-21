@@ -63,5 +63,42 @@ const currentYear = new Date().getFullYear();
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <slot />
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+
+        if (!(target instanceof Element)) {
+          return;
+        }
+
+        const phoneTrigger = target.closest('[data-phone-event="true"]');
+
+        if (!(phoneTrigger instanceof HTMLElement)) {
+          return;
+        }
+
+        const label = phoneTrigger.dataset.phoneLabel?.trim() || phoneTrigger.textContent?.trim() || 'unknown';
+        const phoneDisplay = phoneTrigger.dataset.phoneDisplay?.trim() || 'unknown';
+        const phoneRole = phoneTrigger.dataset.phoneRole?.trim() || 'unknown';
+        const phoneLocation = phoneTrigger.dataset.phoneLocation?.trim() || 'unknown';
+        const phoneType = phoneTrigger.dataset.phoneType?.trim() || 'unknown';
+        const href = phoneTrigger.getAttribute('href') || '';
+
+        window.dataLayer.push({
+          event: 'phone_click',
+          phone_label: label,
+          phone_display: phoneDisplay,
+          phone_role: phoneRole,
+          phone_location: phoneLocation,
+          phone_type: phoneType,
+          phone_href: href,
+          click_text: phoneTrigger.textContent?.trim() || '',
+          click_id: phoneTrigger.id || '',
+          click_classes: phoneTrigger.className || ''
+        });
+      });
+    </script>
   </body>
 </html>

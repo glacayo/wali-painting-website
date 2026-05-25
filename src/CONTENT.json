@@ -24,10 +24,15 @@
         "Mon to Sun 6AM to 7PM"
     ],
     "company_license": "NO LICENSE",
-    "company_license_insurance": "NO INSURANCE",
+    "company_license_insurance": "Licensed & Insured",
     "company_payment_method": "Cash, Check, Zelle",
     "company_estimate": "Free Estimates Available",
     "company_years_experience": "14 Years of Experience",
+    "hero_headline": "Professional Painting Services in",
+    "hero_location": "Delaware",
+    "hero_subheadline": "Get a fast, free estimate for interior, exterior, cabinet, deck, and handyman projects. Trusted local service with 14+ years of experience.",
+    "hero_cta_primary": "Get My Free Estimate",
+    "hero_cta_secondary": "Call Now",
     "company_cover_area": "Lewes, Milton, Bethany Beach, Rehoboth Beach, Ocean View, Magnolia, Dover, Millsboro, Seaford, Frankford, Camden, Harrington, Georgetown",
     "company_type_services": "Residential and Commercial",
     "social_media": {

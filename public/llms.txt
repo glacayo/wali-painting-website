@@ -2,8 +2,19 @@
 
 Wali Painting & Handyman is a family-owned painting and handyman contractor serving Delaware since 2010. We provide residential and commercial painting, interior and exterior painting, kitchen cabinet painting, deck painting, deck restoration, deck staining, flooring services, and general handyman repairs.
 
-- **Phone:** (302) 296-6032, (302) 727-3784
-- **Email:** info@walipaintinghandyman.com
+## Contact
+
+- **Phone:** [(302) 296-6032](tel:+13022966032), [(302) 727-3784](tel:+13027273784)
+- **Email:** [info@walipaintinghandyman.com](mailto:info@walipaintinghandyman.com)
 - **Address:** Georgetown, DE
 - **Hours:** Mon to Sun 6AM to 7PM
-- **Facebook:** https://www.facebook.com/WaliPaintingDelaware
+- **Facebook:** [facebook.com/WaliPaintingDelaware](https://www.facebook.com/WaliPaintingDelaware)
+
+## Website sections
+
+- [Home / Hero](#hero)
+- [Welcome](#welcome)
+- [Services](#services)
+- [Gallery](#gallery)
+- [About Us](#about)
+- [Contact](#contact)

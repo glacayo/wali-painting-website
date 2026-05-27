@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://walipaintinghandyman.com/sitemap-index.xml

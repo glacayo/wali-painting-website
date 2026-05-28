@@ -1,5 +1,6 @@
 ---
-import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
 
 interface Props {
   title: string;
@@ -9,21 +10,46 @@ interface Props {
 }
 
 const { title, description, imageSrc, imageAlt } = Astro.props;
+
+const buildSrcSet = async (src: ImageMetadata, widths: number[], quality: number) => {
+  const variants = await Promise.all(
+    widths.map(async (width) => {
+      const image = await getImage({ src, width, format: 'webp', quality });
+      return `${image.src} ${width}w`;
+    })
+  );
+
+  return variants.join(', ');
+};
+
+const serviceMobileSrcSet = await buildSrcSet(imageSrc, [240, 320, 384, 480], 58);
+const serviceDesktopSrcSet = await buildSrcSet(imageSrc, [320, 384, 448, 512, 600], 60);
+const serviceFallback = await getImage({ src: imageSrc, width: 512, format: 'webp', quality: 60 });
 ---
 
 <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
   <div class="aspect-[4/3] overflow-hidden">
-    <Image 
-      src={imageSrc} 
-      alt={imageAlt}
-      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-      widths={[240, 320, 384, 448, 512]}
-      sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc((100vw - 5rem) / 2), calc((min(100vw, 80rem) - 8rem) / 3)"
-      quality={60}
-      format="webp"
-      loading="lazy"
-      decoding="async"
-    />
+    <picture>
+      <source
+        media="(max-width: 767px)"
+        srcset={serviceMobileSrcSet}
+        sizes="calc(100vw - 2rem)"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset={serviceDesktopSrcSet}
+        sizes="(max-width: 1023px) calc((100vw - 5rem) / 2), calc((min(100vw, 80rem) - 8rem) / 3)"
+      />
+      <img
+        src={serviceFallback.src}
+        alt={imageAlt}
+        width={imageSrc.width}
+        height={imageSrc.height}
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+    </picture>
   </div>
   <div class="p-6">
     <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">{title}</h3>

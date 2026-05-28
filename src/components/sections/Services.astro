@@ -75,6 +75,12 @@ const services = content.services.map(service => ({
                     src={lastService.image.src}
                     alt={lastService.image.alt}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    widths={[240, 320, 384, 448, 512]}
+                    sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc((100vw - 5rem) / 2), calc((min(100vw, 80rem) - 8rem) / 3)"
+                    quality={60}
+                    format="webp"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="md:w-2/3 p-8 flex flex-col justify-center">

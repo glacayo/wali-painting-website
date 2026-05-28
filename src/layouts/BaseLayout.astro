@@ -1,6 +1,7 @@
 ---
 import content from '../content.ts';
-import '../styles/global.css';
+import criticalCssUrl from '../styles/critical.css?url';
+import deferredCssUrl from '../styles/deferred.css?url';
 
 interface Props {
   title?: string;
@@ -39,6 +40,10 @@ const currentYear = new Date().getFullYear();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" /></noscript>
     
+    <link rel="stylesheet" href={criticalCssUrl} />
+    <link rel="stylesheet" href={deferredCssUrl} media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href={deferredCssUrl} /></noscript>
+
     <link rel="icon" type="image/png" href="/favicon.png" />
     
     <script type="application/ld+json">

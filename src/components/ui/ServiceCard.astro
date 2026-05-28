@@ -17,9 +17,9 @@ const { title, description, imageSrc, imageAlt } = Astro.props;
       src={imageSrc} 
       alt={imageAlt}
       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-      widths={[300, 600]}
-      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-      quality={80}
+      widths={[240, 320, 384, 448, 512, 600]}
+      sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc((100vw - 5rem) / 2), calc((min(100vw, 80rem) - 8rem) / 3)"
+      quality={65}
       loading="lazy"
       decoding="async"
     />

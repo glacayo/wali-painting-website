@@ -1,7 +1,6 @@
 ---
-import content from "../../content.ts";
-import { Image } from "astro:assets";
-import logoImg from "../../assets/images/logo/logo.png";
+import content from "../../content";
+import logoImg from "../../assets/images/logo/logo.svg";
 
 const { company_name } = content;
 
@@ -22,19 +21,15 @@ const navLinks = [
     <div class="flex justify-between items-center min-h-[150px]">
       <!-- Logo -->
       <a href="#hero" class="flex items-center">
-        <Image
-          src={logoImg}
+        <img
+          src={logoImg.src}
           alt={`${company_name} logo`}
           class="h-[150px] w-auto"
-          width={141}
-          height={150}
-          widths={[110, 141, 180, 220, 282]}
-          sizes="141px"
+          width="141"
+          height="150"
           loading="eager"
           fetchpriority="high"
           decoding="async"
-          quality={50}
-          format="webp"
         />
       </a>
 

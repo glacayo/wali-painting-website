@@ -8,20 +8,27 @@ const { company_name, company_phone, company_estimate, company_years_experience,
 ---
 
 <section id="hero" class="relative min-h-[500px] lg:min-h-screen flex items-center overflow-hidden">
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0 opacity-50 md:opacity-100">
+  <!-- Desktop Background Image -->
+  <div class="absolute inset-0 z-0 hidden md:block">
     <Image
       src={heroImg}
       alt=""
       class="w-full h-full object-cover"
-      widths={[480, 768, 1280, 1600]}
+      widths={[768, 1280, 1600]}
       sizes="100vw"
       loading="eager"
       fetchpriority="high"
       quality={60}
+      decoding="async"
     />
   </div>
-  <div class="absolute inset-0 bg-gradient-to-r from-black/75 to-black/50 z-10"></div>
+  <!-- Mobile Gradient Background -->
+  <div class="absolute inset-0 z-0 md:hidden bg-gradient-to-br from-brand-dark to-brand-accent"></div>
+
+  <!-- Desktop Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/75 to-black/50 z-10 hidden md:block"></div>
+  <!-- Mobile Overlay -->
+  <div class="absolute inset-0 bg-black/20 z-10 md:hidden"></div>
   
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 md:py-20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

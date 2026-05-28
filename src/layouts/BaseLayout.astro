@@ -90,11 +90,7 @@ const currentYear = new Date().getFullYear();
         firstScript.parentNode.insertBefore(gtmScript, firstScript);
       };
 
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(loadGoogleTagManager, { timeout: 2000 });
-      } else {
-        window.setTimeout(loadGoogleTagManager, 1500);
-      }
+      window.setTimeout(loadGoogleTagManager, 3000);
 
       document.addEventListener('click', (event) => {
         const target = event.target;
